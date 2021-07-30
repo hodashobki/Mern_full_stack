@@ -21,13 +21,13 @@ module.exports.creatProduct=(req,res)=>{
     
     Product.create(req.body)
     .then(newProduct=>res.json({product:newProduct} ))
-    .catch(err=>res.json({message:"Somthing went wrong at creating new Product", error: err}))
+    .catch(err=>res.status(400).json({message:"Somthing went wrong at creating new Product", error: err}))
 };
 
 module.exports.updateExistingProduct=(req,res)=>{
     Product.findOneAndUpdate({_id:req.params.id},req.body,{new:true})
     .then(updatedProduct=>res.json({product:updatedProduct}))
-    .catch(err=>res.json({message:"Somthing went wrong in updating Product", error: err}))
+    .catch(err=>res.status(400).json({message:"Somthing went wrong in updating Product", error: err}))
 
 };
 
