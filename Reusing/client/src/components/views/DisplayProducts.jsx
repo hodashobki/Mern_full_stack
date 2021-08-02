@@ -28,9 +28,8 @@ const DisplayProducts = () => {
                       <p><Link to = {"/products/"+product._id} key={product._id}>{product.title} </Link></p>
                       <p> Price : {product.price}$</p>
                       <p>Product description: {product.description}</p>
-                      {/* <DeleteButton personId={person._id} successCallback={()=>removeFromDom(person._id)}/> */}
                       <ButtonD  productId={product._id} successCallback={()=>removeFromDom(product._id)}/>
-                      {/* <Link to={"/edit/"+product._id}>Edit Product</Link> */}
+                     
                   </div>
               );
           })}
