@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 const styles = {
     paper: {
-        width: "20rem", padding: "1rem"
+        width: "40rem", padding: "1rem",display:"flex",justifyContent:"center",alignItems:"center"
     },
     input: {
         marginBottom: "1rem"
@@ -67,10 +67,10 @@ else{
 
     return (
         <div>
-<form onSubmit={handelSubmit}>
+{/* <form onSubmit={handelSubmit}>
     <p>
         <label>Author Name: 
-            <input type="text" on change={(e)=>{nameValidation(e.target.value) }}  value ={name}/>
+            <input type="text" onChange={(e)=>{nameValidation(e.target.value) }}  value ={name}/>
 
     
         </label>
@@ -78,13 +78,13 @@ else{
         <button type="submit" onClick={()=>navigate("/")}>Cancle</button>
     </p>
 
-</form>
-
-           {/* <Paper elevation={3} style={styles.paper}>
+</form> */}
+            <center>
+           <Paper elevation={3} style={styles.paper}>
             <form onSubmit={handelSubmit}>
                 <FormControl variant="outlined" style={styles.input}>
                     <InputLabel>Author Name</InputLabel>
-                    <OutlinedInput type="text"  on change={(e)=>{nameValidation(e.target.value) }}  value ={name}/>
+                    <OutlinedInput type="text"  onChange={(e)=>{nameValidation(e.target.value) }}  value ={name}/>
                {
                    nameError&&
                    <p style={{color:"red"}}>{nameError}</p>
@@ -103,7 +103,8 @@ else{
               <p style={{color:"red"}}>{submitError}</p>
           }
             </form>
-        </Paper>  */}
+        </Paper> 
+        </center>
 
         </div>
     )
